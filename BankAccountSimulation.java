@@ -7,7 +7,6 @@ class Account {
     private double balance;
     private ArrayList<String> transactionHistory;
 
-    // Constructor
     public Account(String accountHolderName, String accountNumber) {
         this.accountHolderName = accountHolderName;
         this.accountNumber = accountNumber;
@@ -15,7 +14,6 @@ class Account {
         this.transactionHistory = new ArrayList<>();
     }
 
-    // Deposit method
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -26,7 +24,6 @@ class Account {
         }
     }
 
-    // Withdraw method
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
@@ -37,12 +34,11 @@ class Account {
         }
     }
 
-    // Get balance
     public double getBalance() {
         return balance;
     }
 
-    // Print transaction history
+    
     public void printTransactionHistory() {
         System.out.println("\nTransaction History for " + accountHolderName + ":");
         for (String transaction : transactionHistory) {
@@ -50,7 +46,7 @@ class Account {
         }
     }
 
-    // Display account info
+    
     public void displayAccountInfo() {
         System.out.println("\nAccount Holder: " + accountHolderName);
         System.out.println("Account Number: " + accountNumber);
@@ -62,7 +58,6 @@ public class BankAccountSimulation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Create account
         System.out.print("Enter account holder name: ");
         String name = scanner.nextLine();
         System.out.print("Enter account number: ");
